@@ -23,7 +23,40 @@ namespace LearningC__.Operators
         public bool LessThanOrEqual(int numA, int numB)
         {
             return numA <= numB;
-            return numA <= numB;
+        }
+
+        public bool BetweenTwoNumbers(int value, int lowerLimit, int upperLimit)
+        {
+            if (GreaterThan(value, lowerLimit) && LessThan(value, upperLimit)) 
+            { 
+                return true; 
+            }
+            else if (GreaterThanOrEqual(value, lowerLimit) && LessThan(value, upperLimit)) 
+            { 
+                return true;
+            }
+            else if (GreaterThan(value, lowerLimit) && LessThanOrEqual(value, upperLimit))
+            {
+                return true;
+            }
+            else if (GreaterThanOrEqual(value, lowerLimit) && LessThanOrEqual(value, upperLimit))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public string PositiveOrNegative(float valueA)
+        {
+            if (valueA > 0)
+            {
+                return "number is positive";
+            }
+            else if (valueA < 0)
+            {
+                return "number is negative";
+            }
+            return "number is zero";
         }
     }
 }
